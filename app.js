@@ -14,9 +14,9 @@ const config = require('./config/config');
 const errorHandler = require('./middleware/errorHandler');
 const AppError = require('./utils/AppError');
 
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
-const swaggerDocument = YAML.load('api-docs/openapi.yaml');
+// const swaggerUi = require('swagger-ui-express');
+// const YAML = require('yamljs');
+// const swaggerDocument = YAML.load('api-docs/openapi.yaml');
 
 const app = express();
 
@@ -75,7 +75,7 @@ app.use('/v1', bookSearchRouter);
 app.use('/v1', dataRouter);
 
 // Serve Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+/// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // 404 Handler
 app.all('*', (req, res, next) => {
